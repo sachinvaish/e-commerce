@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-}
+} 
 
 :root {
     --primary-color: rgb(11, 74, 126);
@@ -14,7 +14,7 @@ body {
 
 .header {
     background-image: url('.');
-
+    overflow: hidden;
 }
 
 .navbar {
@@ -80,13 +80,39 @@ body {
 }
 .drop-down__item{
     padding: 10px 10px;
+    color: var(--primary-color);
     left: 0;
     right: 0;
     width: 100%;
     box-sizing: border-box;
+    transition: 0.2s ease-in-out;
 }
 .drop-down__item:hover{
-    color: var(--primary-color);
     font-weight: bold;
     background-color: rgb(190, 190, 190);
+}
+
+@keyframes slider-animation{
+    0% { left: 0; }
+	30% { left: 0; }
+	33% { left: -100%; }
+	63% { left: -100%; }
+	66% { left: -200%; }
+	95% { left: -200%; }
+	100% { left: -300%; }
+}
+
+.slider{
+    width: 300%;
+    height: 70%;
+    position: relative;
+    animation: 8s slider-animation infinite ease-in-out;
+}
+
+.slide{
+    width: 33.333333333%;
+    height: 100%;
+    /* background-size: cover; */
+    object-fit: cover;
+    float: left;
 }
